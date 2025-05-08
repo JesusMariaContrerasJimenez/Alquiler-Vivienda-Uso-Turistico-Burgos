@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box; /* Configura el box-sizing para incluir padding y borde en el tamaño total */
     font-size: 100%; /* Define el tamaño base de fuente como el 100% del tamaño predeterminado del navegador */
-    font-family: "Alegreya", serif; /* Especifica una fuente serif "Alegreya" para el texto */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Especifica una fuente serif "Alegreya" para el texto */
     height: 100%; /* Asegura que html ocupe toda la altura de la ventana */
 }
 
@@ -32,9 +32,19 @@ h2{
     padding-bottom: 1rem; /* Espaciado inferior alrededor de h2 */
 }
 
+@font-face{
+    font-family:titulo;
+    src:url(letra4.ttf);
+}
+
+.titulo-4BS{
+    font-size: 4rem; /* Ajusta el tamaño del texto del encabezado h1 */
+    font-family:titulo;
+    font-weight:100;
+}
+
 p {
     font-size: 1rem; /* Define el tamaño del texto de los párrafos */
-    margin-bottom: 1em; /* Añade espacio al final de cada párrafo */
     line-height: 1.6; /* Ajusta la altura de línea para mejorar la legibilidad */
 }
 
@@ -61,18 +71,16 @@ body {
     flex-direction: column; /* Organiza los elementos hijos en una sola columna */
     justify-content: center; /* Centra el contenido verticalmente dentro del cuerpo */
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
-    background-color: #f7f9ec; /* Establece un color de fondo suave (verde claro) para el cuerpo */
+    background-color: #ffffff; /* Establece un color de fondo para el cuerpo */
 }
 
-header, footer {
-    padding-left: 2rem; /* Añade espacio interno a la izquierda, manteniendo una separación uniforme */
-    padding-right: 2rem; /* Añade espacio interno a la derecha, creando un diseño equilibrado */
-}
 
 footer, .a-footer {
     background-color: rgb(0, 0, 0); /* Establece un fondo negro para ambos elementos */
     color: rgb(255, 255, 255); /* Cambia el color del texto a blanco para mejor contraste */
     font-size: 1rem; /* Define el tamaño de fuente estándar para consistencia */
+    padding-left: 2rem; /* Añade espacio interno a la izquierda, manteniendo una separación uniforme */
+    padding-right: 2rem; /* Añade espacio interno a la derecha, creando un diseño equilibrado */
 }
 
 .flex-container {
@@ -197,6 +205,12 @@ footer, .a-footer {
     object-fit: cover; /* Escala las imágenes para llenar el contenedor, recortando si es necesario para mantener proporciones equilibradas */
 }
 
+a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: #000000; /* Cambia el color del texto */
+    font-weight: bold; /* Pone el texto de los elementos en negrita */
+}
+
 .ul-nav {
     display: flex; /* Utiliza flexbox */
     flex-direction: column; /* Coloca los elementos en columna */
@@ -211,18 +225,21 @@ footer, .a-footer {
 }
 
 .ul-nav .active a {
-    color: rgb(203, 60, 4); /* Cambia el color del enlace a rojo */
-    font-weight: bold; /* Pone el texto de los elementos en negrita */
-}
-
-.ul-nav a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: #000000; /* Cambia el color del texto */
+    color: rgb(64, 195, 130); /* Cambia el color del enlace a verde */
     font-weight: bold; /* Pone el texto de los elementos en negrita */
 }
 
 .ul-nav li a:hover {
-    color:rgb(141, 71, 43); /* Cambia el color al pasar el ratón */
+    color:rgb(40, 118, 79); /* Cambia el color al pasar el ratón */
+}
+
+.header {
+    display: flex; /* Utiliza flexbox para diseño flexible */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: space-between; /* Acomoda elementos a ambos lados */
+    padding-right: 2rem; /* Espaciado a la derecha del menú */
+    padding-left: 2rem; /* Añade espacio interno a la izquierda, manteniendo una separación uniforme */
+    padding-right: 2rem; /* Añade espacio interno a la derecha, creando un diseño equilibrado */
 }
 
 .dos-columnas {
@@ -253,13 +270,6 @@ footer, .a-footer {
     gap: 0.5rem; /* Espaciado entre las columnas */
     align-items: flex-start; /* Alinea verticalmente los elementos */
     text-align: center; /* Centra el texto en las celdas */
-}
-
-.dos-columnas-header {
-    display: flex; /* Utiliza flexbox para diseño flexible */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: space-between; /* Acomoda elementos a ambos lados */
-    padding-right: 2rem; /* Espaciado a la derecha del menú */
 }
 
 form {
