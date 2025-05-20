@@ -262,32 +262,9 @@ ul li {
 #descripcion {
     padding: 3rem;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide en dos columnas: imágenes y contenido */
+    grid-template-columns: 1fr; /* Divide en dos columnas: imágenes y contenido */
     gap: 20px;
     align-items: start;
-}
-
-/* Contenedor de imágenes */
-.imagenes {
-    display: grid;
-    grid-template-columns: 1fr; /* La primera imagen ocupa el 100% */
-    gap: 15px;
-}
-
-.imagenes div {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Las siguientes imágenes ocupan 50% cada una */
-    gap: 10px;
-}
-
-img {
-    width: 100%; /* Ajusta todas las imágenes al ancho de su contenedor */
-}
-
-.img-ancho {
-    width: 100%; /* Ajusta todas las imágenes al ancho de su contenedor */
-    height: 300px; /* Ajusta la altura fija para todas las imágenes */
-    object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
 }
 
 /* Contenedor de texto */
@@ -369,6 +346,45 @@ img {
     transform: translateY(0);
 }
 
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-img {
+    width: 100%;
+    height: 300px; /* Ajusta la altura según lo necesario */
+    object-fit: cover;
+}
+
+.boton-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.boton-izquierda {
+    left: 10px;
+}
+
+.boton-derecha {
+    right: 10px;
+}
+
+.imagenes {
+    display: none; /* Oculto por defecto */
+}
+
 /* Tablets */
 @media (min-width: 768px) {
 
@@ -390,6 +406,10 @@ img {
     .cuatro-columnas {
         grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales (Tablets) */
         gap: 1rem; /* Espaciado entre las columnas */
+    }
+
+    .imagenes {
+        display: none; /* Oculto por defecto */
     }
 }
 
@@ -413,5 +433,36 @@ img {
     .cuatro-columnas {
         grid-template-columns: 0.5fr 1.5fr 2.5fr 1fr; /* El ancho de cada columna se ajusta al contenido */
         gap: 1rem; /* Espaciado entre las columnas */
+    }
+
+    .slider-container {
+        display: none; /* Oculto */
+    }
+
+    /* Contenedor de imágenes */
+    .imagenes {
+        display: grid;
+        grid-template-columns: 1fr; /* La primera imagen ocupa el 100% */
+        gap: 15px;
+    }
+
+    .imagenes div {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Las siguientes imágenes ocupan 50% cada una */
+        gap: 10px;
+    }
+
+    img {
+        width: 100%; /* Ajusta todas las imágenes al ancho de su contenedor */
+    }
+
+    .img-ancho {
+        width: 100%; /* Ajusta todas las imágenes al ancho de su contenedor */
+        height: 300px; /* Ajusta la altura fija para todas las imágenes */
+        object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+    }
+
+    #descripcion {
+        grid-template-columns: 1fr 1fr; /* Divide en dos columnas: imágenes y contenido */
     }
 }

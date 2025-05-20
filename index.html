@@ -40,151 +40,138 @@
             </div>
             <img src="./img/catedral.jpg" alt="Catedral de Burgos" class="imagen-fondo">
         </section>
-
         
         <!-- Descripción del piso -->
          <section id="descripcion">
-                <div class="imagenes">
-                    <img src="./img/1-Captura portada.png" alt="Portada">
-                    <div>
-                        <img class="img-ancho" src="./img/2-COMEDOR SALON.jpg" alt="Comedor">
-                        <img class="img-ancho" src="./img/3-SALON COMEDOR.jpg" alt="Salón">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA 1.jpg" alt="Dormitorio doble vista 1">
-                        <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA2.jpg" alt="Dormitorio doble vista 2">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista1.jpg" alt="Dormitorio individual vista 1">
-                        <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista 2.jpg" alt="Dormitorio individual vista 2">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/7-COCINA vista1.jpg" alt="Cocina vista 1">
-                        <img class="img-ancho" src="./img/7-COCINA vista2.jpg" alt="Cocina vista 2">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/8-BAÑO vista1.jpg" alt="Baño vista 1">
-                        <img class="img-ancho" src="./img/8-BAÑO vista2.jpg" alt="Baño vista 2">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/9-ASEO vista1.jpg" alt="Aseo vista 1">
-                        <img class="img-ancho" src="./img/9-ASEO vista2.jpg" alt="Aseo vista 2">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/11-fachada principal.jpg" alt="Fachada">
-                        <img class="img-ancho" src="./img/12-Garaje.jpg" alt="Garaje">
-                    </div>
-                    <div>
-                        <img class="img-ancho" src="./img/10-TERRAZA TENDEDERO.jpg" alt="Terraza">
-                    </div>
+            <div class="slider-container">
+                <button class="boton-slider boton-izquierda" onclick="cambiarImagen(-1)">❮</button>
+                <img class="slider-img" id="imagen-principal" src="./img/1-Captura portada.png" alt="Portada">
+                <button class="boton-slider boton-derecha" onclick="cambiarImagen(1)">❯</button>
+            </div>
+            <div class="imagenes">
+                <img src="./img/1-Captura portada.png" alt="Portada">
+                <div>
+                    <img class="img-ancho" src="./img/2-COMEDOR SALON.jpg" alt="Comedor">
+                    <img class="img-ancho" src="./img/3-SALON COMEDOR.jpg" alt="Salón">
                 </div>
+                <div>
+                    <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA 1.jpg" alt="Dormitorio doble vista 1">
+                    <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA2.jpg" alt="Dormitorio doble vista 2">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista1.jpg" alt="Dormitorio individual vista 1">
+                    <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista 2.jpg" alt="Dormitorio individual vista 2">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/7-COCINA vista1.jpg" alt="Cocina vista 1">
+                    <img class="img-ancho" src="./img/7-COCINA vista2.jpg" alt="Cocina vista 2">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/8-BAÑO vista1.jpg" alt="Baño vista 1">
+                    <img class="img-ancho" src="./img/8-BAÑO vista2.jpg" alt="Baño vista 2">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/9-ASEO vista1.jpg" alt="Aseo vista 1">
+                    <img class="img-ancho" src="./img/9-ASEO vista2.jpg" alt="Aseo vista 2">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/11-fachada principal.jpg" alt="Fachada">
+                    <img class="img-ancho" src="./img/11-Vista posterior edificio.jpg" alt="Parque">
+                </div>
+                <div>
+                    <img class="img-ancho" src="./img/10-TERRAZA TENDEDERO.jpg" alt="Terraza">
+                    <img class="img-ancho" src="./img/12-Garaje.jpg" alt="Garaje">
+                </div>
+            </div>
 
-                <div class="texto">
-                    <h1>Piso de uso turístico 4B'S</h1>
-                    <p>Desde 80€ / noche</p>
-                    <img src="./img/5-estrellas.jpg" alt="Reseña de cinco estrellas" style="width: 80px;">
-                    <hr class="linea">
+            <div class="texto">
+                <h1>Piso de uso turístico 4B'S</h1>
+                <p>Desde 80€ / noche</p>
+                <img src="./img/5-estrellas.jpg" alt="Reseña de cinco estrellas" style="width: 80px;">
+                <hr class="linea">
                     
-                    <h2>Información general</h2>
-                    <p>Vivienda de Uso Turístico con licencia nº 09-217. Se encuentra en pleno Bulevar, una zona muy tranquila, de fácil acceso, llana, sin desniveles y cercana al Centro (18 minutos andando).</p>
-                    <p>Está totalmente equipada y sus orientaciones Noreste y Sur, proporcionan gran luminosidad y confort a sus 62 m2 útiles.</p>
-                    <p>Dispone de todos los servicios: wifi 500Mb, smart TV, ascensor, cocina completa, salón con sofá cama, 2 habitaciones, 2 baños y garaje (2 metros de altura máxima de vehículo).</p>     
-                    <p>Lugares de interés:</p>
-                    <ul class="ul-list">
-                        <li>Catedral de Burgos (1'6 Km)</li>
-                        <li>Arco de Santa María (1'5 km)</li>
-                        <li>Museo de la Evolución Humana (1'1 km)</li>
-                        <li>Paseo del Espolón (1'1 km)</li>
-                        <li>Plaza Mayor de Burgos (1 km)</li>
-                        <li>Castillo de Burgos (1'8 km)</li>
-                    </ul>
-                    <p>Cuenta con otros servicios cercanos, como tiendas, restaurantes, y supermercados (el más cercano abre de 9:00 a 21:30 horas incluídos domingos y festivos).</p>
-                    <hr class="linea">
-                        
-                    <h2>¿Qué incluye?</h2>
-                    <div class="contenedor-iconos">
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Pisio de 62 m<sup>2</sup></span>
-                        </div>
+                <h2>Información general</h2>
+                <p>Vivienda de Uso Turístico con licencia nº 09-217. Se encuentra en pleno Bulevar, una zona muy tranquila, de fácil acceso, llana, sin desniveles y cercana al Centro (18 minutos andando).</p>
+                <p>Está totalmente equipada y sus orientaciones Noreste y Sur, proporcionan gran luminosidad y confort a sus 62 m2 útiles.</p>
+                <p>Dispone de todos los servicios: wifi 500Mb, smart TV, ascensor, cocina completa, salón con sofá cama, 2 habitaciones, 2 baños y garaje (2 metros de altura máxima de vehículo).</p>     
+                <p>Lugares de interés:</p>
+                <ul class="ul-list">
+                    <li>Catedral de Burgos (1'6 Km)</li>
+                    <li>Arco de Santa María (1'5 km)</li>
+                    <li>Museo de la Evolución Humana (1'1 km)</li>
+                    <li>Paseo del Espolón (1'1 km)</li>
+                    <li>Plaza Mayor de Burgos (1 km)</li>
+                    <li>Castillo de Burgos (1'8 km)</li>
+                </ul>
+                <p>Cuenta con otros servicios cercanos, como tiendas, restaurantes, y supermercados (el más cercano abre de 9:00 a 21:30 horas incluídos domingos y festivos).</p>
+                <hr class="linea">
 
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-users"></i>
-                            <span>1-5 personas</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-bed"></i>
-                            <span>2 habitaciones (una doble y una individual)</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-bath"></i>
-                            <span>2 baños completos</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-couch"></i>
-                            <span>Sofá cama</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-wifi"></i>
-                            <span>Wi-Fi gratuito</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-tv"></i>
-                            <span>Smart TV</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-square-parking"></i>
-                            <span>Garaje</span>
-                        </div>
-                        
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-baby"></i>
-                            <span>Bebés 0-2 años gratis, disponen de cuna</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-volume-xmark"></i>
-                            <span>Zona tranquila</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-question"></i>
-                            <span>Totalmente equipado</span>
-                        </div>
-
-                        <div class="icono-texto">
-                            <i class="fa-solid fa-temperature-high"></i>
-                            <span>Calefacción</span>
-                        </div>
+                <h2>¿Qué incluye?</h2>
+                <div class="contenedor-iconos">
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-house-user"></i>
+                        <span>Pisio de 62 m<sup>2</sup></span>
                     </div>
-                    
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-users"></i>
+                        <span>1-5 personas</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-bed"></i>
+                        <span>2 habitaciones (una doble y una individual)</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-bath"></i>
+                        <span>2 baños completos</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-couch"></i>
+                        <span>Sofá cama</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-wifi"></i>
+                        <span>Wi-Fi gratuito</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-tv"></i>
+                        <span>Smart TV</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-square-parking"></i>
+                        <span>Garaje</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-baby"></i>
+                        <span>Bebés 0-2 años gratis, disponen de cuna</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                        <span>Zona tranquila</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-question"></i>
+                        <span>Totalmente equipado</span>
+                    </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-temperature-high"></i>
+                        <span>Calefacción</span>
+                    </div>
+                    </div>
                     <p>Otros aspectos destacables: lo damos todo por su confort, indíquenos su situación particular antes de realizar la reserva, y le enviaremos una oferta personalizada, que se adapte a sus necesidades y preferencias.</p>
-                    
                     <hr class="linea">
                         
                     <h2>Políticas de reserva</h2>
-
                     <div class="contenedor-iconos">
                         <div class="icono-texto">
                             <i class="fa-regular fa-clock"></i>
                             <span>Entrada a partir de las 17:00 horas</span>
                         </div>
-
                         <div class="icono-texto">
                             <i class="fa-regular fa-clock"></i>
                             <span>Salida hasta las 12:00 horas</span>
                         </div>
-                        
                     </div>
-
                     <p>* Los cambios de entrada y salida están sujetos a disponibilidad.</p>
-
                     <p>Por nuestra seguridad, habrá un intervalo mínimo de 24 horas, entre reservas.</p>
                     <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas:
                         <ul class="ul-list">
@@ -201,11 +188,9 @@
                     <p>No están permitidos huéspedes adicionales sin registrar. Para su registro, se necesita el DNI / PASAPORTE de todos el día anterior a su entrada, para poder firmarlo el día de entrada.</p>
                     <p>Número de registro: VUT-19/217.</p>
                     <p>Política de cancelación: recibe el 100% si cancelas 14 días antes y un 50% si cancelas 7 días antes.</p>
-                
                     <div style="text-align: center; margin: 20px;">
                             <a href="reservas.html" class="boton-reserva">Reservar</a>
                         </div>
-
                     <hr class="linea">
                         
                     <h2>Ubicación</h2>
@@ -214,21 +199,11 @@
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
-
                         </iframe>
-                        
-                        
                 </div>
-
         </section>
 
-            
-
-        
-
-
-        <main>
-            
+        <main>    
         </main>
 
         <!-- Footer -->
@@ -255,5 +230,6 @@
             </div>
         </footer>
         <script src="script-fotos.js"></script>
+        <script src="script-slider.js"></script>
     </body>
 </html>
