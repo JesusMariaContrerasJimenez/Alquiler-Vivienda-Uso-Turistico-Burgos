@@ -9,7 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>4B'S piso turístico Burgos</title>
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon"/>
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     
     <body>
@@ -32,46 +33,198 @@
         </header>
         
         <!-- Cabecera catedral -->
-        <section class="catedral" style="position: relative; width: 100%; height: 60vh; overflow: hidden;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <section class="catedral">
+            <div class="overlay">
                 <p class="conoce">Conoce Burgos</p>
                 <p class="titulo-4BS">4B'S: B&B Burgos Bulevar</p>
-                <p class="conoce">Piso de uso turístico</p>
             </div>
-            <img src="./img/catedral.jpg" alt="Catedral de Burgos" style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="./img/catedral.jpg" alt="Catedral de Burgos" class="imagen-fondo">
         </section>
 
         
         <!-- Descripción del piso -->
-        <section id="descripcion">
-            <h2>Sobre el Piso</h2>
-            <p>Vivienda Uso Turístico, VUT-09/217, en pleno Bulevar, zona muy tranquila, de fácil acceso, llano, sin desniveles, cercano al Centro, andando, 18' al arco Santa María, Catedral, Museos, etc.
-            <p>Sus orientaciones Noreste y Sur, proporcionan gran luminosidad y confort a sus 62 m2 útiles, por disponer de todos los servicios, wifi 500Mb, ascensor, cocina completa, salón con sofá cama, 2 habitaciones, baños y garaje.</p>
-            <p>El espacio
-            El salón-comedor está dotado de conexión internet de Fibra de alta velocidad, 500Mb, WIFI, con dos puntos de acceso a red RJ45, SAMSUM SMART TV 42", 2 sofás, uno de ellos con cama doble, para satisfacer las necesidades y confort de los mas exigentes.
+         <section id="descripcion">
+                <div class="imagenes">
+                    <img src="./img/1-Captura portada.png" alt="Portada">
+                    <div>
+                        <img class="img-ancho" src="./img/2-COMEDOR SALON.jpg" alt="Comedor">
+                        <img class="img-ancho" src="./img/3-SALON COMEDOR.jpg" alt="Salón">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA 1.jpg" alt="Dormitorio doble vista 1">
+                        <img class="img-ancho" src="./img/4-DORMITORIO DOBLE VISTA2.jpg" alt="Dormitorio doble vista 2">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista1.jpg" alt="Dormitorio individual vista 1">
+                        <img class="img-ancho" src="./img/5-DORMITORIO INDIVIDUAL vista 2.jpg" alt="Dormitorio individual vista 2">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/7-COCINA vista1.jpg" alt="Cocina vista 1">
+                        <img class="img-ancho" src="./img/7-COCINA vista2.jpg" alt="Cocina vista 2">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/8-BAÑO vista1.jpg" alt="Baño vista 1">
+                        <img class="img-ancho" src="./img/8-BAÑO vista2.jpg" alt="Baño vista 2">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/9-ASEO vista1.jpg" alt="Aseo vista 1">
+                        <img class="img-ancho" src="./img/9-ASEO vista2.jpg" alt="Aseo vista 2">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/11-fachada principal.jpg" alt="Fachada">
+                        <img class="img-ancho" src="./img/12-Garaje.jpg" alt="Garaje">
+                    </div>
+                    <div>
+                        <img class="img-ancho" src="./img/10-TERRAZA TENDEDERO.jpg" alt="Terraza">
+                    </div>
+                </div>
 
-            El aparcamiento privado le dará independencia, comodidad y rapidez en sus desplazamientos y está incluido en el precio. Máxima altura vehículo 2 m.
+                <div class="texto">
+                    <h1>Piso de uso turístico 4B'S</h1>
+                    <p>Desde 80€ / noche</p>
+                    <img src="./img/5-estrellas.jpg" alt="Reseña de cinco estrellas" style="width: 80px;">
+                    <hr class="linea">
+                    
+                    <h2>Información general</h2>
+                    <p>Vivienda de Uso Turístico con licencia nº 09-217. Se encuentra en pleno Bulevar, una zona muy tranquila, de fácil acceso, llana, sin desniveles y cercana al Centro (18 minutos andando).</p>
+                    <p>Está totalmente equipada y sus orientaciones Noreste y Sur, proporcionan gran luminosidad y confort a sus 62 m2 útiles.</p>
+                    <p>Dispone de todos los servicios: wifi 500Mb, smart TV, ascensor, cocina completa, salón con sofá cama, 2 habitaciones, 2 baños y garaje (2 metros de altura máxima de vehículo).</p>     
+                    <p>Lugares de interés:</p>
+                    <ul class="ul-list">
+                        <li>Catedral de Burgos (1'6 Km)</li>
+                        <li>Arco de Santa María (1'5 km)</li>
+                        <li>Museo de la Evolución Humana (1'1 km)</li>
+                        <li>Paseo del Espolón (1'1 km)</li>
+                        <li>Plaza Mayor de Burgos (1 km)</li>
+                        <li>Castillo de Burgos (1'8 km)</li>
+                    </ul>
+                    <p>Cuenta con otros servicios cercanos, como tiendas, restaurantes, y supermercados (el más cercano abre de 9:00 a 21:30 horas incluídos domingos y festivos).</p>
+                    <hr class="linea">
+                        
+                    <h2>¿Qué incluye?</h2>
+                    <div class="contenedor-iconos">
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-house-user"></i>
+                            <span>Pisio de 62 m<sup>2</sup></span>
+                        </div>
 
-            Por nuestra seguridad, habrá un intervalo mínimo de 24 horas, entre reservas.
-            Servicios y zonas comunes
-            Portal de acceso, ascensor, escaleras y garaje
-            Tiendas cercanas, restaurantes y varios supermercados, el mas cercano, abre de 9:00 a 9:30 h incluidos domingos y festivos.
-            Otros aspectos destacables
-            Lo damos todo por su confort, indíqueme su situación particular, antes de realizar la reserva, y le enviaré una oferta personalizada, que se adapte a sus necesidades y preferencias.</p>
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-users"></i>
+                            <span>1-5 personas</span>
+                        </div>
 
-            <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas:
-            1 persona: habitación cama individual, sin reserva directa.
-            Opcional: habitación con cama doble y baño por 20€/noche, a añadir, sin reserva directa. Ambas opciones, solo de octubre a marzo, mínimo 3 noches y máximo 5 noches.
-            2 personas: habitación con cama doble y baño, reserva directa.
-            Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.
-            3 personas: habitación con cama doble y baño junto con habitación cama individual, reserva directa.
-            Opcional: sofá cama doble en salón, por 20 €/noche, a añadir, sin reserva directa.
-            4 personas: habitación con cama doble y baño junto con sofá cama doble en salón, reserva directa.
-            Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.
-            5 personas: todas las camas, reserva directa.</p>
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-bed"></i>
+                            <span>2 habitaciones (una doble y una individual)</span>
+                        </div>
 
-            <p>No están permitidos huéspedes adicionales, sin registrar. Para su registro, se necesita el DNI / PASAPORTE de todos, el día anterior a su entrada, para poder firmarlo el día de entrada. Número de registro: VUT-19/217.</p>
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-bath"></i>
+                            <span>2 baños completos</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-couch"></i>
+                            <span>Sofá cama</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-wifi"></i>
+                            <span>Wi-Fi gratuito</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-tv"></i>
+                            <span>Smart TV</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-square-parking"></i>
+                            <span>Garaje</span>
+                        </div>
+                        
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-baby"></i>
+                            <span>Bebés 0-2 años gratis, disponen de cuna</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-volume-xmark"></i>
+                            <span>Zona tranquila</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-question"></i>
+                            <span>Totalmente equipado</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-solid fa-temperature-high"></i>
+                            <span>Calefacción</span>
+                        </div>
+                    </div>
+                    
+                    <p>Otros aspectos destacables: lo damos todo por su confort, indíquenos su situación particular antes de realizar la reserva, y le enviaremos una oferta personalizada, que se adapte a sus necesidades y preferencias.</p>
+                    
+                    <hr class="linea">
+                        
+                    <h2>Políticas de reserva</h2>
+
+                    <div class="contenedor-iconos">
+                        <div class="icono-texto">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Entrada a partir de las 17:00 horas</span>
+                        </div>
+
+                        <div class="icono-texto">
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Salida hasta las 12:00 horas</span>
+                        </div>
+                        
+                    </div>
+
+                    <p>* Los cambios de entrada y salida están sujetos a disponibilidad.</p>
+
+                    <p>Por nuestra seguridad, habrá un intervalo mínimo de 24 horas, entre reservas.</p>
+                    <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas:
+                        <ul class="ul-list">
+                            <li>1 persona: habitación cama individual, sin reserva directa.
+                                    Opcional: habitación con cama doble y baño por 20€/noche, a añadir, sin reserva directa. Ambas opciones, solo de octubre a marzo, mínimo 3 noches y máximo 5 noches.</li>
+                            <li>2 personas: habitación con cama doble y baño, reserva directa.
+                                    Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.</li>
+                            <li>3 personas: habitación con cama doble y baño junto con habitación cama individual, reserva directa.
+                                    Opcional: sofá cama doble en salón, por 20 €/noche, a añadir, sin reserva directa.</li>
+                            <li>4 personas: habitación con cama doble y baño junto con sofá cama doble en salón, reserva directa.
+                                    Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.</li>
+                            <li>5 personas: todas las camas, reserva directa.</p></li>
+                        </ul>
+                    <p>No están permitidos huéspedes adicionales sin registrar. Para su registro, se necesita el DNI / PASAPORTE de todos el día anterior a su entrada, para poder firmarlo el día de entrada.</p>
+                    <p>Número de registro: VUT-19/217.</p>
+                    <p>Política de cancelación: recibe el 100% si cancelas 14 días antes y un 50% si cancelas 7 días antes.</p>
+                
+                    <div style="text-align: center; margin: 20px;">
+                            <a href="reservas.html" class="boton-reserva">Reservar</a>
+                        </div>
+
+                    <hr class="linea">
+                        
+                    <h2>Ubicación</h2>
+                        <iframe class="mapa-google" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.197132956632!2d-3.689641224030949!3d42.338320271194895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd45fccb928c1b6b%3A0x4792c0f007913cef!2sC.%20de%20Rivalamora%2C%2012%2C%2009002%20Burgos!5e0!3m2!1ses!2ses!4v1747730966350!5m2!1ses!2ses" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+
+                        </iframe>
+                        
+                        
+                </div>
+
         </section>
+
+            
+
+        
 
 
         <main>
@@ -88,17 +241,19 @@
                 </div>
                 <div>
                     <h2>Dirección:</h2>
-                    <p>C/ Rivalamora 12, Burgos</p>
+                    <p>C/ Rivalamora Nº 12</p>
+                    <p>09002, Burgos</p>
                 </div>
                 <div>
                     <h2>Contacto:</h2> 
-                    <p>Email: contacto@pisoturistico.com</p>
-                    <p>Tel: +34 123 456 789</p>
+                    <p>Email: contacto@4bs.com</p>
+                    <p>Tel: +34 653 11 65 04</p>
                 </div>
             </div>
             <div>
-                <p class="copy">&copy; 2025 Piso Turístico en Burgos</p>
+                <p class="copy">Copyright &copy; 2025 Piso Turístico en Burgos</p>
             </div>
         </footer>
+        <script src="script-fotos.js"></script>
     </body>
 </html>
