@@ -165,14 +165,19 @@ form input, form textarea {
 }
   
 form button {
+    font-size: 1.2rem;
+    font-weight: bold;
     background-color: #4CAF50; /* Establece un color verde oscuro para los botones */
     color: white; /* Aplica texto blanco para asegurar contraste y visibilidad */
     border: none; /* Elimina los bordes del botón para una apariencia más limpia */
-    padding: 10px 15px; /* Ajusta el espacio interno para hacer los botones cómodos de usar */
+    margin-top: 15px;
+    padding: 12px 24px; /* Ajusta el espacio interno para hacer los botones cómodos de usar */
     cursor: pointer; /* Cambia el cursor a forma de mano cuando el usuario pasa sobre el botón */
     border-radius: 5px; /* Redondea las esquinas del botón para un diseño más moderno y accesible */
+    transition: background 0.3s;
+    text-decoration: none;
 }
-  
+
 form button:hover {
     background-color: rgb(40, 118, 79); /* Cambia el color del botón a verde más oscuro al pasar el cursor, creando un efecto visual atractivo */
 }
@@ -262,9 +267,15 @@ ul li {
 #descripcion {
     padding: 3rem;
     display: grid;
-    grid-template-columns: 1fr; /* Divide en dos columnas: imágenes y contenido */
+    grid-template-columns: 1fr; /* Una columna */
     gap: 20px;
     align-items: start;
+}
+
+#formulario-contacto, #contacto-directo{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
 }
 
 /* Contenedor de texto */
@@ -277,6 +288,12 @@ ul li {
 .contenedor-iconos {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.contenedor-contacto {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
     gap: 20px; /* Espacio entre elementos */
 }
 
@@ -296,15 +313,34 @@ ul li {
     color:  #4CAF50; /* Color del icono */
 }
 
+.icono-texto-contacto {
+    display: flex;
+    flex-direction: column; /* ✅ Pone el texto debajo del icono */
+    align-items: center; /* ✅ Centra todo */
+    gap: 5px; /* 🔹 Espacio entre el icono y el texto */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para resaltar */
+    color: #333; /* Color del texto */
+}
+
+.icono-texto-contacto i {
+    width: 40px; /* Define un ancho fijo para todos los iconos */
+    text-align: center; /* Centra el icono dentro de su espacio */
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    color:  #4CAF50; /* Color del icono */
+}
+
 .boton-reserva {
     display: inline-block;
     background-color: #4CAF50; /* Color del botón */
     color: white;
     padding: 12px 24px;
     font-size: 1.2rem;
+    font-weight: bold;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
@@ -385,6 +421,56 @@ ul li {
     display: none; /* Oculto por defecto */
 }
 
+#calendario {
+    width: 80%;
+    height: 600px; 
+    margin: auto;
+}
+
+.fc-button {
+    background-color: #4CAF50 !important; /* Cambia el color de fondo */
+    color: white !important; /* Cambia el color del texto */
+    border: none !important;
+    font-weight: bold;
+}
+
+.fc-button:hover {
+    background-color: rgb(40, 118, 79) !important; /* Color al pasar el ratón */
+}
+
+.fc-toolbar-title {
+    font-size: 1.5rem !important; /* Ajusta el tamaño */
+    font-weight: bold !important;
+    color: #000000 !important; /* Color opcional */
+}
+
+.opcion-reserva {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.opcion-reserva:hover {
+    background-color: #e1e1e1;
+}
+
+#confirmar-reserva, .boton-consultar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#confirmar-reserva:hover, .boton-consultar:hover {
+    background-color: rgb(40, 118, 79);
+}
+
+
 /* Tablets */
 @media (min-width: 768px) {
 
@@ -464,5 +550,9 @@ ul li {
 
     #descripcion {
         grid-template-columns: 1fr 1fr; /* Divide en dos columnas: imágenes y contenido */
+    }
+
+    .contenedor-contacto {
+        grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
     }
 }
