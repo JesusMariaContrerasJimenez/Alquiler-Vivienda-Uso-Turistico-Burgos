@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta 
             name="Alquiler Burgos"
             content="Alquiler piso turistico burgos" />
@@ -31,16 +31,47 @@
                 </nav>
             </div>
         </header>
-        
-        
-
-            
-
-        
-
 
         <main>
-            
+            <section id="formulario-valoraciones">
+                <h2>Deja tu valoración</h2>
+                <form id="valoracion-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="general">Valoración general:</label>
+                    <input type="number" id="general" name="general" min="1" max="5" required>
+
+                    <label for="limpieza">Limpieza:</label>
+                    <input type="number" id="limpieza" name="limpieza" min="1" max="5" required>
+
+                    <label for="veracidad">Veracidad:</label>
+                    <input type="number" id="veracidad" name="veracidad" min="1" max="5" required>
+
+                    <label for="llegada">Llegada:</label>
+                    <input type="number" id="llegada" name="llegada" min="1" max="5" required>
+
+                    <label for="comunicacion">Comunicación:</label>
+                    <input type="number" id="comunicacion" name="comunicacion" min="1" max="5" required>
+
+                    <label for="ubicacion">Ubicación:</label>
+                    <input type="number" id="ubicacion" name="ubicacion" min="1" max="5" required>
+
+                    <label for="calidad">Calidad:</label>
+                    <input type="number" id="calidad" name="calidad" min="1" max="5" required>
+
+                    <label for="comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario" required></textarea>
+
+                    <button type="submit">Enviar Valoración</button>
+                </form>
+            </section>
+
+            <section id="valoraciones-lista">
+                <h2>Valoraciones de nuestros huéspedes</h2>
+                <div id="valoraciones-container"></div>
+                <button id="mostrar-todas">Mostrar todas las valoraciones</button>
+            </section>
         </main>
 
         <!-- Footer -->
@@ -67,5 +98,6 @@
             </div>
         </footer>
         <script src="script-fotos.js"></script>
+        <script src="script-valoraciones.js"></script>
     </body>
 </html>

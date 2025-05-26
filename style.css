@@ -272,7 +272,7 @@ ul li {
     align-items: start;
 }
 
-#formulario-contacto, #contacto-directo{
+#formulario-contacto, #contacto-directo, #formulario-valoraciones, #valoraciones-lista{
     padding-left: 3rem;
     padding-right: 3rem;
     padding-bottom: 2rem;
@@ -470,6 +470,28 @@ ul li {
     background-color: rgb(40, 118, 79);
 }
 
+.valoracion {
+    border: 2px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.valoracion h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.valoracion small {
+    font-weight: normal;
+    color: #666;
+}
+
+.valoracion p {
+    margin: 5px 0;
+}
 
 /* Tablets */
 @media (min-width: 768px) {
