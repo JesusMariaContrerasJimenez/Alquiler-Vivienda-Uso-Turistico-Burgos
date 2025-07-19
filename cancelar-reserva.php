@@ -96,7 +96,8 @@ function enviarCorreoCancelacion($idReserva, $dni, $nombre, $apellidos, $email, 
                 <h2 style='color: #333; text-align: center;'>Reserva confirmada</h2>
                 <p>Hola <strong>$nombre</strong>,</p>
                 <p>Tu reserva ha sido <strong>cancelada</strong> en <strong>4BS</strong> con los siguientes datos:</p>
-                
+                <p>Reservation cancelled / Réserve annulée / Reservierung annulliert / Riserva annullata / Reserva cancelada</p>
+
                 <table style='width: 100%; border-collapse: collapse; margin: 20px 0;'>
                     <tr>
                         <td style='border: 1px solid #ddd; padding: 8px;'><strong>ID de reserva:</strong></td>
@@ -109,6 +110,7 @@ function enviarCorreoCancelacion($idReserva, $dni, $nombre, $apellidos, $email, 
                 </table>
                 
                 <p>Según nuestra política, se abonará el <strong>$porcentajeReembolso%</strong> del importe total de la reserva.</p>
+                <p>Repayment / Remboursement / Rückzahlung / Rimborso / Reembolso: $porcentajeReembolso%</p>
 
                 <div style='background: #f4f4f4; padding: 15px; text-align: center; margin-top: 20px;'>
                     <p><strong>Contacto:</strong></p>
