@@ -9,24 +9,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>4B'S piso turístico Burgos</title>
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon"/>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                pageLanguage: 'es', // Idioma original de la web
+                includedLanguages: 'en,fr,de,it,pt', // Idiomas para traducir
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
     
     <body>
         <!--Header -->
         <header>
             <div class="header">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="./img/logo blanco.jpg" alt="4BS logotipo" class="logo">
                 </a>
                 <nav>
                     <ul class="ul-nav">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="galeria.html">Galería</a></li>
-                        <li><a href="reservas.html">Reservas</a></li>
-                        <li class="active"><a href="valoraciones.html">Valoraciones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="gal.php">Galeria</a></li>
+                        <li><a href="reservas.php">Reservas</a></li>
+                        <li class="active"><a href="valoraciones.php">Valoraciones</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -78,7 +89,7 @@
         <footer>
             <div class="tres-columnas">
                 <div>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="./img/logo negro.jpg" alt="4BS logotipo negro" class="logo">
                     </a>
                 </div>
@@ -97,7 +108,7 @@
                 <p class="copy">Copyright &copy; 2025 Piso Turístico en Burgos</p>
             </div>
         </footer>
-        <script src="script-fotos.js"></script>
-        <script src="script-valoraciones.js"></script>
+        <script src="script-fotos.js?v=<?php echo time(); ?>"></script>
+        <script src="script-valoraciones.js?v=<?php echo time(); ?>"></script>
     </body>
 </html>

@@ -9,10 +9,10 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com'; // 🔹 Usa el servidor SMTP de Gmail
+    $mail->Host = 'smtp.gmail.com'; // Usa el servidor SMTP de Gmail
     $mail->SMTPAuth = true;
-    $mail->Username = 'contacto4bs@gmail.com'; // 🔹 
-    $mail->Password = 'yzbf rqup gpry rdtn'; // 🔹 "App Password" en Gmail
+    $mail->Username = 'contacto4bs@gmail.com'; // 
+    $mail->Password = 'yzbf rqup gpry rdtn'; // "App Password" en Gmail
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 

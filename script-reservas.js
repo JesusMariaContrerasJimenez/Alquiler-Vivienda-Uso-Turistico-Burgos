@@ -1,8 +1,58 @@
-document.getElementById("form-reserva").addEventListener("submit", async function (event) { // ✅ Marcar como async
-    event.preventDefault(); // Evita recargar la página
+// ✅ Variable global para el calendario
+let calendario;
+
+document.addEventListener("DOMContentLoaded", function () {
+    let hoy = new Date();
+    hoy.setHours(0, 0, 0, 0); // ✅ Eliminamos horas para comparación precisa
     
+    calendario = new FullCalendar.Calendar(document.getElementById("calendario"), {
+        initialView: "multiMonth",
+        duration: { months: 2 },
+        locale: "es",
+        firstDay: 1,
+        height: "auto",
+        headerToolbar: {
+            left: "prev",
+            center: "title",
+            right: "next"
+        },
+        validRange: {
+            start: hoy.toISOString().split("T")[0] // ✅ Bloquea navegación antes de hoy
+        },
+        events: []
+    });
+
+    // **Cargar reservas desde la base de datos**
+    fetch("obtener-reservas.php")
+        .then(response => response.json())
+        .then(data => {
+            let eventos = data.map(reserva => ({
+                title: "Reservado",
+                start: reserva.FechaEntrada,
+                end: ajustarFechaSalida(reserva.FechaSalida),
+                color: "red",
+            }));
+
+            calendario.addEventSource(eventos);
+            calendario.render();
+        })
+        .catch(error => console.error("❌ Error al cargar reservas:", error));
+});
+
+// ✅ Función para ajustar la fecha de salida (marca el día completo)
+function ajustarFechaSalida(fechaSalida) {
+    let fecha = new Date(fechaSalida);
+    fecha.setDate(fecha.getDate() + 1); // ✅ Asegura que se incluya el día de salida
+    return fecha.toISOString().split("T")[0]; 
+}
+
+// ✅ Evento para calcular precios sin agregar al calendario automáticamente
+document.getElementById("form-reserva").addEventListener("submit", async function (event) {
+    event.preventDefault(); // ✅ Evita la recarga de la página
+
     let fechaInicio = document.getElementById("fecha-inicio").value;
     let fechaSalida = document.getElementById("fecha-salida").value;
+
     let numeroPersonas = parseInt(document.getElementById("personas").value);
     let necesitaCuna = document.getElementById("necesitaCuna").value === "1" ? "Sí" : "No";
     let fechaInicioObj = new Date(fechaInicio);
@@ -71,9 +121,11 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
     }
 
     // **Verificar si la estancia cumple con las reglas**
-    if (nochesDiarias < 4 && nochesFestivoFinSemana < 2) {
-        alert("⚠️ La estancia mínima debe ser de al menos 4 días laborables o 2 días de fin de semana.");
-        return; // 🚀 Detiene la ejecución si no cumple la restricción
+    const totalNoches = nochesDiarias + nochesFestivoFinSemana;
+    console.log(`📊 Noches laborables: ${nochesDiarias}, noches festivas: ${nochesFestivoFinSemana}`);
+    if (!(totalNoches >= 4 || nochesFestivoFinSemana >= 2)) {
+    alert("⚠️ La estancia mínima debe ser de 4 noches totales o al menos 2 noches festivas.");
+    return; // 🚀 Detiene la ejecución si no cumple la restricción
     }
 
     // **Calcula el precio base**
@@ -97,18 +149,18 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
     let opciones = [];
 
     if (numeroPersonas === 1) {
-        opciones.push({ nombre: "Cama individual", precio: precioTotal });
-        opciones.push({ nombre: "Cama doble con baño", precio: precioTotal + (incrementoOpcional * nochesDiarias) + (incrementoOpcional * nochesFestivoFinSemana)});
+        opciones.push({ nombre: "Sofá cama", precio: precioTotal });
+        opciones.push({ nombre: "Cama individual", precio: precioTotal + (incrementoOpcional * totalNoches) });
     } else if (numeroPersonas === 2) {
         opciones.push({ nombre: "Sofá cama", precio: precioTotal-60 });
         opciones.push({ nombre: "Cama doble con baño", precio: precioTotal });
-        opciones.push({ nombre: "Cama doble con baño + cama individual", precio: precioTotal + (incrementoOpcional * nochesDiarias) + (incrementoOpcional * nochesFestivoFinSemana)});
+        opciones.push({ nombre: "Cama doble con baño + sofá cama", precio: precioTotal + (incrementoOpcional * totalNoches) });
     } else if (numeroPersonas === 3) {
         opciones.push({ nombre: "Cama doble con baño + cama individual", precio: precioTotal });
-        opciones.push({ nombre: "Cama doble con baño + cama individual + sofá cama", precio: precioTotal + (incrementoOpcional * nochesDiarias) + (incrementoOpcional * nochesFestivoFinSemana)});
+        opciones.push({ nombre: "Cama doble con baño + cama individual + sofá cama", precio: precioTotal + (incrementoOpcional * totalNoches) });
     } else if (numeroPersonas === 4) {
         opciones.push({ nombre: "Cama doble con baño + sofá cama", precio: precioTotal });
-        opciones.push({ nombre: "Cama doble con baño + sofá cama + cama individual", precio: precioTotal + (incrementoOpcional * nochesDiarias) + (incrementoOpcional * nochesFestivoFinSemana)});
+        opciones.push({ nombre: "Cama doble con baño + sofá cama + cama individual", precio: precioTotal + (incrementoOpcional * totalNoches) });
     } else if (numeroPersonas === 5) {
         opciones.push({ nombre: "Cama doble con baño + sofá cama + cama individual", precio: precioTotal });
     }
@@ -124,7 +176,7 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
     document.getElementById("resultado-precio").innerHTML = htmlOpciones;
 });
 
-// **Función para mostrar el formulario de reserva**
+// ✅ Función para mostrar el formulario de confirmación
 function mostrarFormulario(opcionSeleccionada, precio, fechaInicio, fechaSalida, numeroPersonas) {
     document.getElementById("formulario-reserva").style.display = "block";
 
@@ -157,16 +209,33 @@ function mostrarFormulario(opcionSeleccionada, precio, fechaInicio, fechaSalida,
             <input type="date" id="fechaSalida" value="${fechaSalida}" readonly>
             <label for="precioTotal">Precio total:</label>
             <input type="number" id="precioTotal" value="${precio}" readonly>
-            <button type="submit" id="confirmar-reserva">Confirmar Reserva</button>
+            <button type="button" id="confirmar-reserva">Confirmar Reserva</button>
         </form>
     `;
-    document.getElementById("confirmarReserva").addEventListener("click", function () {
-        console.log("✅ Confirmación activada, ejecutando guardarReserva()");
-        guardarReserva();
+
+    document.addEventListener("click", function (event) {
+        if (event.target && event.target.id === "confirmar-reserva") {
+            console.log("✅ Botón detectado con `document.addEventListener()`, ejecutando guardarReserva()");
+            let nuevaReserva = {
+                title: "Reservado",
+                start: fechaInicio,
+                end: fechaSalida,
+                color: "red"
+            };
+
+            // 🚀 Solo agregar la reserva al calendario después de confirmar
+            if (calendario && typeof calendario.addEvent === "function") {
+                calendario.addEvent(nuevaReserva);
+            } else {
+                console.error("❌ Error: La instancia de `calendario` no está correctamente definida.");
+            }
+            guardarReserva();
+        }
     });
+    
 }
 
-// **Guardar la reserva en la base de datos**
+// ✅ Función para guardar la reserva en la base de datos
 function guardarReserva() {
     let reservaData = new FormData();
     reservaData.append("dni", document.getElementById("dni").value);
@@ -176,43 +245,39 @@ function guardarReserva() {
     reservaData.append("telefono", document.getElementById("telefono").value);
     reservaData.append("numPersonas", document.getElementById("numPersonas").value);
     reservaData.append("necesitaCuna", document.getElementById("necesitaCuna").value);
+    reservaData.append("opcionSeleccionada", document.getElementById("opcionSeleccionada").value);
     reservaData.append("fechaEntrada", document.getElementById("fechaEntrada").value);
     reservaData.append("fechaSalida", document.getElementById("fechaSalida").value);
     reservaData.append("precioTotal", document.getElementById("precioTotal").value);
 
+    console.log("📤 Enviando datos al servidor:", Object.fromEntries(reservaData.entries())); // ✅ Verifica los datos antes de enviarlos
+
+    for (let [key, value] of reservaData.entries()) {
+        if (!value) {
+            alert(`⚠️ El campo "${key}" está vacío. Completa todos los datos.`);
+            return;
+        }
+    }
+
     fetch("guardar-reserva.php", {
         method: "POST",
-        body: reservaData
-    }).then(response => response.json())
-      .then(data => {
-          if (data.success) {
-              alert("✅ Reserva guardada correctamente.");
-              actualizarCalendario();
-          } else {
-              alert("❌ Error al registrar la reserva.");
-          }
-      });
-}
-
-// **Función para actualizar el calendario**
-function actualizarCalendario() {
-    fetch("obtener_reservas.php")
-        .then(response => response.json())
-        .then(data => {
-            let eventos = data.map(reserva => ({
-                title: "Reservado",
-                start: reserva.FechaEntrada,
-                end: reserva.FechaSalida,
-                color: "red",
-            }));
-            let calendario = new FullCalendar.Calendar(document.getElementById("calendario"), {
-                initialView: "dayGridMonth",
-                locale: "es",
-                firstDay: 1,
-                headerToolbar: { right: "prev,next", left: "title" },
-                events: eventos,
-            });
-            calendario.render();
-        })
-        .catch(error => console.error("❌ Error al actualizar el calendario:", error));
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(Object.fromEntries(reservaData.entries()))
+    })
+    .then(response => response.text()) // ✅ Primero obtenemos texto plano
+    .then(text => {
+        try {
+            let data = JSON.parse(text); // ✅ Convertimos a JSON manualmente
+            console.log("✅ Respuesta del servidor:", data);
+            if (data.success) {
+                alert("✅ Reserva guardada correctamente.");
+            } else {
+                alert("❌ Error al registrar la reserva: " + data.error);
+            }
+        } catch (error) {
+            console.error("❌ Error al procesar JSON:", error);
+            console.error("🔍 Respuesta del servidor:", text); // ✅ Mostrar contenido para depuración
+        }
+    })
+    .catch(error => console.error("❌ Error en la petición:", error));
 }

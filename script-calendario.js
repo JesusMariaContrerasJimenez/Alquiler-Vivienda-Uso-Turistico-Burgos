@@ -1,11 +1,18 @@
+let calendario;
 document.addEventListener("DOMContentLoaded", function () {
-    let calendario = new FullCalendar.Calendar(document.getElementById("calendario"), {
+    let hoy = new Date(); // ✅ Fecha actual
+    hoy.setHours(0, 0, 0, 0); // ✅ Eliminamos horas para comparación precisa
+    
+    calendario = new FullCalendar.Calendar(document.getElementById("calendario"), {
         initialView: "dayGridMonth",
         locale: "es",
         firstDay: 1,
         headerToolbar: {
             right: "prev,next",  
             left: "title",
+        },
+        validRange: {
+            start: hoy.toISOString().split("T")[0] // ✅ Bloquea navegación antes de hoy
         },
         events: []
     });

@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 $conexion = new mysqli("sql311.infinityfree.com", "if0_38988628", "X8S06qjZrizMoMG", "if0_38988628_db_reservas");
 

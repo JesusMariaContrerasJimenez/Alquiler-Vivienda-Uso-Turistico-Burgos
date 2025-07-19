@@ -3,35 +3,47 @@
     <head>
         <meta charset="utf-8">
         <meta 
-            name="Alquiler Burgos"
-            content="Alquiler piso turistico burgos" />
-        <meta name="4BS" content="Esta es la página principal de inicio de 4BS">
+            name="4BS Alquiler Burgos"
+            content="$BS Alquiler piso turistico burgos" />
+        <meta name="4BS Alquiler piso turistico burgos" content="Esta es la página principal de inicio de 4BS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="bXKL4uJV6lwqFk8omVe1CM6fNKQPt67tCyK6qFiSMn4" />
         <title>4B'S piso turístico Burgos</title>
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon"/>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                pageLanguage: 'es', // Idioma original de la web
+                includedLanguages: 'en,fr,de,it,pt', // Idiomas para traducir
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
     
     <body>
+        <div id="google_translate_element" style="display: none;"></div>
         <!--Header -->
         <header>
             <div class="header">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="./img/logo blanco.jpg" alt="4BS logotipo" class="logo">
                 </a>
                 <nav>
                     <ul class="ul-nav">
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="galeria.html">Galería</a></li>
-                        <li><a href="reservas.html">Reservas</a></li>
-                        <li><a href="valoraciones.html">Valoraciones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li class="active"><a href="index.php">Inicio</a></li>
+                        <li><a href="gal.php">Galeria</a></li>
+                        <li><a href="reservas.php">Reservas</a></li>
+                        <li><a href="valoraciones.php">Valoraciones</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </nav>
-            </div>
         </header>
-        
+
         <!-- Cabecera catedral -->
         <section class="catedral">
             <div class="overlay">
@@ -173,23 +185,24 @@
                     </div>
                     <p>* Los cambios de entrada y salida están sujetos a disponibilidad.</p>
                     <p>Por nuestra seguridad, habrá un intervalo mínimo de 24 horas, entre reservas.</p>
-                    <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas:
+                    <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas.
                         <ul class="ul-list">
-                            <li>1 persona: habitación cama individual, sin reserva directa.
-                                    Opcional: habitación con cama doble y baño por 20€/noche, a añadir, sin reserva directa. Ambas opciones, solo de octubre a marzo, mínimo 3 noches y máximo 5 noches.</li>
-                            <li>2 personas: habitación con cama doble y baño, reserva directa.
-                                    Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.</li>
-                            <li>3 personas: habitación con cama doble y baño junto con habitación cama individual, reserva directa.
-                                    Opcional: sofá cama doble en salón, por 20 €/noche, a añadir, sin reserva directa.</li>
-                            <li>4 personas: habitación con cama doble y baño junto con sofá cama doble en salón, reserva directa.
-                                    Opcional: habitación con cama individual por 20€/noche, a añadir, sin reserva directa.</li>
-                            <li>5 personas: todas las camas, reserva directa.</p></li>
+                            <li>1 persona (disponible solo de octubre a marzo): sofá cama doble en el salón.
+                                    Opcional: añadir habitación con cama individual.</li>
+                            <li>2 personas: habitación con cama doble y baño.
+                                    Opcional: usar solo sofá cama doble en el salón (incluye descuento) o añadir a la habitación el sofá cama doble en el salón.</li>
+                            <li>3 personas: habitación con cama doble y baño junto con habitación cama individual.
+                                    Opcional: añadir sofá cama doble en salón.</li>
+                            <li>4 personas: habitación con cama doble y baño junto con sofá cama doble en salón.
+                                    Opcional: añadir habitación con cama individual.</li>
+                            <li>5 personas: todas las camas disponibles.</p></li>
                         </ul>
+                    <p>Las reservas se formalizarán mediante transferencia bancaria, la cual se debe emitir en un plazo máximo de 24 horas después de la reserva.</p>
                     <p>No están permitidos huéspedes adicionales sin registrar. Para su registro, se necesita el DNI / PASAPORTE de todos el día anterior a su entrada, para poder firmarlo el día de entrada.</p>
                     <p>Número de registro: VUT-19/217.</p>
-                    <p>Política de cancelación: recibe el 100% si cancelas 14 días antes y un 50% si cancelas 7 días antes.</p>
+                    <p>Política de cancelación: recibe el 100% si cancelas antes de 7 días y un 40% si cancelas después.</p>
                     <div style="text-align: center; margin: 20px;">
-                        <a href="reservas.html" class="boton-reserva">Reservar</a>
+                        <a href="reservas.php" class="boton-reserva">Reservar</a>
                     </div>
                     <hr class="linea">
                         
@@ -210,7 +223,7 @@
         <footer>
             <div class="tres-columnas">
                 <div>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="./img/logo negro.jpg" alt="4BS logotipo negro" class="logo">
                     </a>
                 </div>
@@ -229,7 +242,7 @@
                 <p class="copy">Copyright &copy; 2025 Piso Turístico en Burgos</p>
             </div>
         </footer>
-        <script src="script-fotos.js"></script>
-        <script src="script-slider.js"></script>
+        <script src="script-fotos.js?v=<?php echo time(); ?>"></script>
+        <script src="script-slider.js?v=<?php echo time(); ?>"></script>
     </body>
 </html>

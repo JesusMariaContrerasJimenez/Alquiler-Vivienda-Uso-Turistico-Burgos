@@ -9,33 +9,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>4B'S piso turístico Burgos</title>
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon"/>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/fullcalendar.min.css" rel="stylesheet">
-        <script src="https://www.paypal.com/sdk/js?client-id=AcKqN6kllWWtivr4F0BlIsqLWOq7saAgn16WUHNxhnD2UoEUP_xjnW_vnIK7IWhiYn3PSStGurnYo3Ff"></script>
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                pageLanguage: 'es', // Idioma original de la web
+                includedLanguages: 'en,fr,de,it,pt', // Idiomas para traducir
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </head>
     
     <body>
         <!--Header -->
         <header>
             <div class="header">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="./img/logo blanco.jpg" alt="4BS logotipo" class="logo">
                 </a>
                 <nav>
                     <ul class="ul-nav">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="galeria.html">Galería</a></li>
-                        <li class="active"><a href="reservas.html">Reservas</a></li>
-                        <li><a href="valoraciones.html">Valoraciones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="gal.php">Galeria</a></li>
+                        <li class="active"><a href="reservas.php">Reservas</a></li>
+                        <li><a href="valoraciones.php">Valoraciones</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section id="descripcion">
-                <div>
+            <section>
+                <div id="calendario" style="margin-bottom: 30px;"></div>
+            </section>
+
+            <section class="contenedor-columnas">
+                <!-- Columna 1: Hacer reserva -->
+                <div class="columna">
                     <h2>Hacer una reserva</h2>
                     <form id="form-reserva">
                         <label for="fecha-inicio">Fecha de entrada:</label>
@@ -79,6 +94,12 @@
                             <label for="numPersonas">Número de personas:</label>
                             <input type="number" id="numPersonas" readonly>
 
+                            <label for="necesitaCuna">¿Necesita cuna?</label>
+                            <select id="necesitaCuna">
+                                <option value="0">No</option>
+                                <option value="1">Sí</option>
+                            </select>
+
                             <label for="opcionSeleccionada">Opción seleccionada:</label>
                             <input type="text" id="opcionSeleccionada" readonly>
 
@@ -94,20 +115,33 @@
                             <button type="submit" id="confirmar-reserva">Confirmar Reserva</button>
                         </form>
                     </div>
+                    <p>La reserva se formalizará mediante transferencia bancaria o bizum. </p>
+                    <p>En el email de confirmación recibirás los datos para el pago de la estancia.</p>
                 </div>
-                <div id="calendario"></div>
+
+                <!-- Columna 2: Cancelar reserva -->
+                <div class="columna">
+                    <h2>Cancelar reserva</h2>
+                    <form id="form-cancelar">
+                        <label for="idCancelar">ID de reserva:</label>
+                        <input type="text" id="idCancelar" name="idCancelar" required>
+
+                        <label for="dniCancelar">DNI:</label>
+                        <input type="text" id="dniCancelar" required>
+
+                        <button type="submit" id="cancelar-reserva">Cancelar reserva</button>
+                    </form>
+                <p>Se abonará el 100% si cancelas antes de 7 días y el 40% si cancelas después.</p>
+                </div>
             </section>
 
-            
-            
-            
         </main>
 
         <!-- Footer -->
         <footer>
             <div class="tres-columnas">
                 <div>
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="./img/logo negro.jpg" alt="4BS logotipo negro" class="logo">
                     </a>
                 </div>
@@ -128,8 +162,8 @@
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-        <script src="script-calendario.js"></script>
-        <script src="script-reserva.js"></script>
-        <script src="script-precios.js"></script>
+        
+        <script src="script-reservas.js?v=<?php echo time(); ?>"></script>
+        <script src="cancelar-reserva.js?v=<?php echo time(); ?>"></script>
     </body>
 </html>
