@@ -127,11 +127,12 @@
                         <input type="text" id="idCancelar" name="idCancelar" required>
 
                         <label for="dniCancelar">DNI:</label>
-                        <input type="text" id="dniCancelar" required>
+                        <input type="text" id="dniCancelar" name="dniCancelar" required>
 
                         <button type="submit" id="cancelar-reserva">Cancelar reserva</button>
                     </form>
-                <p>Se abonará el 100% si cancelas antes de 7 días y el 40% si cancelas después.</p>
+                    <p>Se abonará el 100% si cancelas antes de 7 días y el 40% si cancelas después.</p>
+                    <div id="respuesta-cancelacion"></div>
                 </div>
             </section>
 

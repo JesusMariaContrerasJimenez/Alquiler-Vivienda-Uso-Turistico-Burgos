@@ -25,7 +25,7 @@ if (!$id || !$dni) {
 }
 
 // 🔍 Obtener datos de la reserva antes de borrarla
-$sqlSelect = "SELECT * FROM reservas WHERE id = '$id' AND DNI = '$dni'";
+$sqlSelect = "SELECT * FROM reservas WHERE idReserva = '$id' AND DNI = '$dni'";
 $result = $conexion->query($sqlSelect);
 
 if ($result->num_rows === 0) {
@@ -39,10 +39,10 @@ $reserva = $result->fetch_assoc();
 $fechaHoy = new DateTime();
 $fechaEntradaObj = new DateTime($reserva['FechaEntrada']);
 $diasAntes = $fechaHoy->diff($fechaEntradaObj)->days;
-$porcentajeReembolso = ($fechaHoy < $fechaEntradaObj && $diasAntes >= 7) ? 100 : 40;
+$porcentajeReembolso = ($fechaHoy < $fechaEntradaObj && $diasAntes >= 6) ? 100 : 40;
 
 // 🗑️ Eliminar la reserva
-$sqlDelete = "DELETE FROM reservas WHERE id = '$id' AND DNI = '$dni'";
+$sqlDelete = "DELETE FROM reservas WHERE idReserva = '$id' AND DNI = '$dni'";
 if ($conexion->query($sqlDelete) === TRUE) {
     enviarCorreoCancelacion(
         $id,
@@ -93,10 +93,10 @@ function enviarCorreoCancelacion($idReserva, $dni, $nombre, $apellidos, $email, 
                 <div style='text-align: center;'>
                     <img src='https://4bspisoturisticoburgos.free.nf/img/logo%20blanco.jpg' alt='4BS Logo' width='150' style='margin-bottom: 20px;'>
                 </div>
-                <h2 style='color: #333; text-align: center;'>Reserva confirmada</h2>
+                <h2 style='color: #333; text-align: center;'>Reserva cancelada</h2>
                 <p>Hola <strong>$nombre</strong>,</p>
                 <p>Tu reserva ha sido <strong>cancelada</strong> en <strong>4BS</strong> con los siguientes datos:</p>
-                <p>Reservation cancelled / Réserve annulée / Reservierung annulliert / Riserva annullata / Reserva cancelada</p>
+                <p>Reservation cancelled / Reserve annulee / Reservierung annulliert / Riserva annullata:</p>
 
                 <table style='width: 100%; border-collapse: collapse; margin: 20px 0;'>
                     <tr>
@@ -109,8 +109,8 @@ function enviarCorreoCancelacion($idReserva, $dni, $nombre, $apellidos, $email, 
                     </tr>
                 </table>
                 
-                <p>Según nuestra política, se abonará el <strong>$porcentajeReembolso%</strong> del importe total de la reserva.</p>
-                <p>Repayment / Remboursement / Rückzahlung / Rimborso / Reembolso: $porcentajeReembolso%</p>
+                <p>Le abonaremos el <strong>$porcentajeReembolso%</strong> del importe total de la reserva.</p>
+                <p>Repayment / Remboursement / Ruckzahlung / Rimborso / Reembolso: $porcentajeReembolso%</p>
 
                 <div style='background: #f4f4f4; padding: 15px; text-align: center; margin-top: 20px;'>
                     <p><strong>Contacto:</strong></p>

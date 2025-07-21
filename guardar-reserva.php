@@ -72,7 +72,7 @@ function enviarCorreoConfirmacion($idReserva, $dni, $nombre, $apellidos, $email,
                 <h2 style='color: #333; text-align: center;'>Reserva confirmada</h2>
                 <p>Hola <strong>$nombre</strong>,</p>
                 <p>Tu reserva ha sido confirmada en <strong>4BS</strong> con los siguientes datos:</p>
-                <p>Confirmed reservation / Réservation confirmée / Eine bestätigte Buchung / Prenotazione confermata / Reserva confirmada</p> 
+                <p>Confirmed reservation / Reservation confirmee / Eine bestatigte Buchung / Prenotazione confermata:</p> 
                 <table style='width: 100%; border-collapse: collapse; margin: 20px 0;'>
                     <tr>
                         <td style='border: 1px solid #ddd; padding: 8px;'><strong>ID de reserva:</strong></td>
@@ -121,13 +121,13 @@ function enviarCorreoConfirmacion($idReserva, $dni, $nombre, $apellidos, $email,
                 </table>
                 
                 <p>Recuerda que dispones de <strong>24 horas</strong> para realizar el <strong>pago de la estancia</strong>. Dicho pago se puede realizar por transferencia bancaria o bizum: </p>
-                <p>Payment / Paiement/ Zahlung / Pagamento / Pagamento</p>
-                <p>Número de cuenta: <strong>ES29 2100 0414 6102 0026 5167</strong></p>
+                <p>Payment / Paiement / Zahlung / Pagamento:</p>
+                <p>Transferencia bancaria: <strong>ES29 2100 0414 6102 0026 5167</strong></p>
                 <p>Bizum: <strong>653116504</strong></p>
 
-                <p>También debes rellenar el siguiente formulario antes del día de llegada, con los datos de los huéspedes:</p>
-                <p>Form / Formulaire / Formular / Formulario / Formulário</p>
-                <p><a href='https://docs.google.com/forms/d/e/1FAIpQLSeR5ZQQLaAixKIZ8I2AYoRc1ZQ8oSfcYypcGAfVRfYRKvuKgA/viewform?usp=header' style='color: #007BFF; font-weight: bold;'>👉 Datos de los huéspedes</a></p>
+                <p>Igualmente, debes rellenar el siguiente formulario antes de la llegada, con los datos de todas las pesonas mayores de 14 que se vayan a alojar:</p>
+                <p>Form / Formulaire / Formular / Formulario:</p>
+                <p><a href='https://docs.google.com/forms/d/e/1FAIpQLSeR5ZQQLaAixKIZ8I2AYoRc1ZQ8oSfcYypcGAfVRfYRKvuKgA/viewform?usp=header' style='color: #007BFF; font-weight: bold;'>Datos de los inquilinos</a></p>
                 
                 <p>Si tienes alguna duda, no dudes en contactarnos.</p>
 
