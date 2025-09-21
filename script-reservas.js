@@ -74,6 +74,12 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
         return; // 🚀 Detiene la ejecución si no cumple la restricción
     }
 
+    // ⛔ Restricción para 1 persona
+    if (numeroPersonas === 1 && diferenciaDias > 4) {
+        alert("⚠️ Para una sola persona, la estancia máxima permitida es de 4 noches.");
+        return;
+    }
+
     // **1️⃣ Consultar disponibilidad en la base de datos**
     let respuesta = await fetch("https://4bspisoturisticoburgos.free.nf/comprobar-disponibilidad.php", {
         method: "POST",
@@ -122,10 +128,9 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
 
     // **Verificar si la estancia cumple con las reglas**
     const totalNoches = nochesDiarias + nochesFestivoFinSemana;
-    console.log(`📊 Noches laborables: ${nochesDiarias}, noches festivas: ${nochesFestivoFinSemana}`);
-    if (!(totalNoches >= 4 || nochesFestivoFinSemana >= 2)) {
-    alert("⚠️ La estancia mínima debe ser de 4 noches totales o al menos 2 noches festivas.");
-    return; // 🚀 Detiene la ejecución si no cumple la restricción
+    if (totalNoches < 2) {
+        alert("⚠️ La estancia mínima debe ser de 2 noches.");
+        return; // 🚀 Detiene la ejecución si no cumple la restricción
     }
 
     // **Calcula el precio base**
@@ -151,8 +156,11 @@ document.getElementById("form-reserva").addEventListener("submit", async functio
     if (numeroPersonas === 1) {
         opciones.push({ nombre: "Sofá cama", precio: precioTotal });
         opciones.push({ nombre: "Cama individual", precio: precioTotal + (incrementoOpcional * totalNoches) });
-    } else if (numeroPersonas === 2) {
+    } else if (numeroPersonas === 2 && diferenciaDias <= 4) {
         opciones.push({ nombre: "Sofá cama", precio: precioTotal-60 });
+        opciones.push({ nombre: "Cama doble con baño", precio: precioTotal });
+        opciones.push({ nombre: "Cama doble con baño + sofá cama", precio: precioTotal + (incrementoOpcional * totalNoches) });
+    } else if (numeroPersonas === 2 && diferenciaDias > 4) {
         opciones.push({ nombre: "Cama doble con baño", precio: precioTotal });
         opciones.push({ nombre: "Cama doble con baño + sofá cama", precio: precioTotal + (incrementoOpcional * totalNoches) });
     } else if (numeroPersonas === 3) {

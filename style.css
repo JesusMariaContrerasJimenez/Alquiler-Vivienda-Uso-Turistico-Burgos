@@ -166,6 +166,11 @@ a {
     text-align: center; /* Centra el texto en las celdas */
 }
 
+.sangrado {
+    display: block;
+    margin-left: 10px; 
+}
+
 form {
     background: white; /* Establece un fondo blanco para el formulario, creando un contraste limpio y profesional */
     padding: 20px; /* Añade un espacio interno uniforme alrededor del contenido del formulario */

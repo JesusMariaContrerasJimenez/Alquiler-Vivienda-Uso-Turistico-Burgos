@@ -2,13 +2,12 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <meta 
-            name="4BS Alquiler Burgos"
-            content="$BS Alquiler piso turistico burgos" />
+        <title>4BS Alquiler de Piso Turístico en Burgos</title>
+        <meta name="description" content="Descubre 4BS, tu piso turístico en el corazón de Burgos. Comodidad, buena ubicación y todas las facilidades para tu estancia perfecta. ¡Reserva ya!">
         <meta name="4BS Alquiler piso turistico burgos" content="Esta es la página principal de inicio de 4BS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="google-site-verification" content="bXKL4uJV6lwqFk8omVe1CM6fNKQPt67tCyK6qFiSMn4" />
-        <title>4B'S piso turístico Burgos</title>
+        
         <link rel="icon" href="./img/favicon.jpg" type="image/x-icon"/>
         <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -61,7 +60,7 @@
                 <button class="boton-slider boton-derecha" onclick="cambiarImagen(1)">❯</button>
             </div>
             <div class="imagenes">
-                <img src="./img/1-Captura portada.png" alt="Portada">
+                <img src="./img/1-Captura portada.jpg" alt="Portada">
                 <div>
                     <img class="img-ancho" src="./img/2-COMEDOR SALON.jpg" alt="Comedor">
                     <img class="img-ancho" src="./img/3-SALON COMEDOR.jpg" alt="Salón">
@@ -103,9 +102,9 @@
                 <hr class="linea">
                     
                 <h2>Información general</h2>
-                <p>Vivienda de Uso Turístico con licencia nº 09-217. Se encuentra en pleno Bulevar, una zona muy tranquila, de fácil acceso, llana, sin desniveles y cercana al Centro (18 minutos andando).</p>
+                <p>Vivienda de Uso Turístico con licencia ESFCTU000009016000335395000000000000000000 VUT-09/2176. Se encuentra en pleno Bulevar, una zona muy tranquila, de fácil acceso, llana, sin desniveles y cercana al Centro (18 minutos andando).</p>
                 <p>Está totalmente equipada y sus orientaciones Noreste y Sur, proporcionan gran luminosidad y confort a sus 62 m2 útiles.</p>
-                <p>Dispone de todos los servicios: wifi 500Mb, smart TV, ascensor, cocina completa, salón con sofá cama, 2 habitaciones, 2 baños y garaje (2 metros de altura máxima de vehículo).</p>     
+                <p>Dispone de todos los servicios: wifi 500Mb, smart TV, ascensor, calefacción, cocina completa, salón con sofá cama y 2 habitaciones con ventilador de techo para invierno y verano, con luz 3 ambientes, 2 baños y garaje (2 metros de altura máxima de vehículo).</p>     
                 <p>Lugares de interés:</p>
                 <ul class="ul-list">
                     <li>Catedral de Burgos (1'6 Km)</li>
@@ -168,8 +167,13 @@
                         <i class="fa-solid fa-temperature-high"></i>
                         <span>Calefacción</span>
                     </div>
+                    <div class="icono-texto">
+                        <i class="fa-solid fa-fan"></i>
+                        <span>Ventiladores de techo con luz 3 ambientes para invierno y verano, con mando</span>
                     </div>
-                    <p>Otros aspectos destacables: lo damos todo por su confort, indíquenos su situación particular antes de realizar la reserva, y le enviaremos una oferta personalizada, que se adapte a sus necesidades y preferencias.</p>
+                    </div>
+                    <p>Otros aspectos destacables:</p>
+                    <p>Lo damos todo por su confort, indíquenos su situación particular antes de realizar la reserva, y le enviaremos una oferta personalizada y directa al usuario, que se adapte a sus necesidades y preferencias, sin intermediarios.</p>
                     <hr class="linea">
                         
                     <h2>Políticas de reserva</h2>
@@ -187,19 +191,20 @@
                     <p>Por nuestra seguridad, habrá un intervalo mínimo de 24 horas, entre reservas.</p>
                     <p>El alquiler será completo con acceso a las habitaciones/camas en función del número de personas.
                         <ul class="ul-list">
-                            <li>1 persona (disponible solo de octubre a marzo): sofá cama doble en el salón.
-                                    Opcional: añadir habitación con cama individual.</li>
-                            <li>2 personas: habitación con cama doble y baño.
-                                    Opcional: usar solo sofá cama doble en el salón (incluye descuento) o añadir a la habitación el sofá cama doble en el salón.</li>
-                            <li>3 personas: habitación con cama doble y baño junto con habitación cama individual.
-                                    Opcional: añadir sofá cama doble en salón.</li>
-                            <li>4 personas: habitación con cama doble y baño junto con sofá cama doble en salón.
-                                    Opcional: añadir habitación con cama individual.</li>
+                            <li>1 persona (disponible solo de octubre a marzo y máximo 4 noches): sofá cama doble en el salón.<br>
+                                <span class="sangrado">- Opcional: añadir habitación con cama individual (+20€/día).</span></li>
+                            <li>2 personas: habitación con cama doble y baño. <br>
+                                <span class="sangrado">- Opción 1: usar solo sofá cama doble en el salón (incluye descuento 60€). Máximo 4 noches.</span>
+                                <span class="sangrado">- Opción 2: añadir habitación con cama individual (+20€/día)</span></li>
+                            <li>3 personas: habitación con cama doble y baño junto con habitación cama individual.<br>
+                                <span class="sangrado">- Opcional: añadir sofá cama doble en salón (+20€/día).</span></li>
+                            <li>4 personas: habitación con cama doble y baño junto con sofá cama doble en salón.<br>
+                                <span class="sangrado">- Opcional: añadir habitación con cama individual (+20€/día).</span></li>
                             <li>5 personas: todas las camas disponibles.</p></li>
                         </ul>
                     <p>Las reservas se formalizarán mediante transferencia bancaria, la cual se debe emitir en un plazo máximo de 24 horas después de la reserva.</p>
-                    <p>No están permitidos huéspedes adicionales sin registrar. Para su registro, se necesita el DNI / PASAPORTE de todos el día anterior a su entrada, para poder firmarlo el día de entrada.</p>
-                    <p>Número de registro: VUT-19/217.</p>
+                    <p>No están permitidos huéspedes adicionales sin registrar. Para su registro, se necesita el NIE / NIF / OTRO DOCUMENTO EXTRANJERO / PASAPORTE de todos, el día anterior a su entrada, para poder firmarlo el día de entrada.</p>
+                    <p>Número de registro: ESFCTU000009016000335395000000000000000000VUT-09/2176.</p>
                     <p>Política de cancelación: recibe el 100% si cancelas antes de 7 días y un 40% si cancelas después.</p>
                     <div style="text-align: center; margin: 20px;">
                         <a href="reservas.php" class="boton-reserva">Reservar</a>

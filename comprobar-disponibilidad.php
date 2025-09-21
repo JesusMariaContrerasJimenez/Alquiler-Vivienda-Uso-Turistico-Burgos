@@ -5,7 +5,7 @@ $fechaInicio = $_POST['fechaInicio'];
 $fechaSalida = $_POST['fechaSalida'];
 
 // **1️⃣ Verificar que la fecha de entrada sea anterior a la de salida**
-if ($fechaInicio >= $fechaSalida) {
+if ($fechaInicio > $fechaSalida) {
     echo json_encode(["disponible" => false, "mensaje" => "La fecha de entrada debe ser anterior a la fecha de salida."]);
     exit; // Detener la ejecución
 }

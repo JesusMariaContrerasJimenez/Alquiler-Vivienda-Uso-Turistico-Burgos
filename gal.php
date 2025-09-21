@@ -48,7 +48,7 @@
                 <h2>Galería de imágenes</h2>
                 <div class="contenedor-galeria">
                     <figure>
-                        <img src="./img/1-Captura portada.png" alt="Portada">
+                        <img src="./img/1-Captura portada.jpg" alt="Portada">
                         <figcaption>Portada</figcaption>
                     </figure>
                     <figure>
